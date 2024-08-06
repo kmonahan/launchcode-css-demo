@@ -1,0 +1,124 @@
+:root {
+  --font-family-primary: "Roboto", sans-serif;
+  --color-thistle: #e3c0d3;
+  --color-mountbatten-pink: #95818d;
+  --color-grey: #576066;
+  --color-dark-slate: #2c514c;
+  --color-gunmetal: #122932;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/** 
+ * This sets everything so that the width, e.g. 100%,
+ * includes the padding. Otherwise, the browser will
+ * set the element to 100% and then adding the padding,
+ * which can cause it to run off the page.
+ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    var(--color-thistle),
+    var(--color-mountbatten-pink),
+    var(--color-grey),
+    var(--color-dark-slate),
+    var(--color-gunmetal)
+  );
+  color: var(--color-gunmetal);
+  font-family: var(--font-family-primary);
+}
+
+.header,
+.subheading {
+  color: #fff;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.book {
+  align-items: flex-start;
+  background-color: var(--color-thistle);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+  padding: 1.25rem;
+  width: 100%;
+}
+
+.book img {
+  max-height: 20.625rem;
+  width: auto;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.button {
+  background-color: var(--color-dark-slate);
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.125rem;
+  min-width: 6rem;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header,
+.main {
+  margin-inline: auto;
+  max-width: 62.5rem;
+  padding-inline: 1rem;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+@media (min-width: 800px) {
+  .book-list {
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .book {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .button {
+    transition: background-color 300ms ease-out;
+  }
+
+  .button:hover {
+    background-color: var(--color-grey);
+  }
+}
